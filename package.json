@@ -4,10 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:browser": "ng build --prod --project=angular-ssr-example",
+    "build:server": "ng build --prod --project=angular-ssr-example2",
+    "build": "npm run build:browser && npm run build:server",
+    "serve": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -18,8 +21,11 @@
     "@angular/forms": "~10.0.2",
     "@angular/platform-browser": "~10.0.2",
     "@angular/platform-browser-dynamic": "~10.0.2",
-    "@angular/platform-server": "^10.0.2",
+    "@angular/platform-server": "^10.0.3",
     "@angular/router": "~10.0.2",
+    "@nguniversal/express-engine": "^10.0.1",
+    "@types/jest": "^26.0.4",
+    "@types/mocha": "^7.0.2",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -28,9 +34,9 @@
     "@angular-devkit/build-angular": "~0.1000.1",
     "@angular/cli": "~10.0.1",
     "@angular/compiler-cli": "~10.0.2",
-    "@types/node": "^12.11.1",
-    "@types/jasmine": "~3.5.0",
+    "@types/jasmine": "^3.5.11",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0-next.1",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~5.0.0",

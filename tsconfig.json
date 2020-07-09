@@ -6,6 +6,11 @@
 */
 {
   "files": [],
+  "types": ["jasmine"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"
